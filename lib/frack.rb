@@ -16,4 +16,5 @@ ActiveRecord::Base.establish_connection(
 
 module module Frack
   autoload :Router, 'frack/router'
+  autoload :Application, 'frack/application'
 end
