@@ -13,3 +13,7 @@ ActiveRecord::Base.establish_connection(
   username: 'users', 
   password: 'Xuanhuy21@nba' 
 ) 
+
+module module Frack
+  autoload :Router, 'frack/router'
+end
