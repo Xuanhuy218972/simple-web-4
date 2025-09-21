@@ -8,6 +8,12 @@ require 'rack/session/cookie'
 
 use Rack::Static, root: 'public', urls: ['/images', '/js', '/css']
 
+use Frack::Router do 
+    get "/" => 'home#show'
+    get '/sign_up' => 'users#new'
+    post '/users/sign_up' => 'users#create'
+end
+
 use Rack::Session::Cookie, 
     key:'rack.session',
     path: '/',

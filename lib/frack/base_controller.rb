@@ -3,8 +3,8 @@ module Frack
     attr_reader :request, :session, :current_user
 
     def initialize(env)
-      @request
-      @flash_message = request@flash_message = request.session&.delete('flash')
+      @request = Rack::Request.new(env)
+      @flash_message = request.session&.delete('flash')
       @current_user = User.find_by_id request.session['user_id']
     end
 
